@@ -1,0 +1,79 @@
+{
+  "pai_job_table": [
+    "job_name",
+    "inst_id",
+    "user",
+    "status",
+    "start_time",
+    "end_time"
+  ],
+  "pai_task_table": [
+    "job_name",
+    "task_name",
+    "inst_num",
+    "status",
+    "start_time",
+    "end_time",
+    "plan_cpu",
+    "plan_mem",
+    "plan_gpu",
+    "gpu_type"
+  ],
+  "pai_instance_table": [
+    "job_name",
+    "task_name",
+    "inst_name",
+    "worker_name",
+    "inst_id",
+    "status",
+    "start_time",
+    "end_time",
+    "machine"
+  ],
+  "pai_sensor_table": [
+    "job_name",
+    "task_name",
+    "worker_name",
+    "inst_id",
+    "machine",
+    "gpu_name",
+    "cpu_usage",
+    "gpu_wrk_util",
+    "avg_mem",
+    "max_mem",
+    "avg_gpu_wrk_mem",
+    "max_gpu_wrk_mem",
+    "read",
+    "write",
+    "read_count",
+    "write_count"
+  ],
+  "pai_group_tag_table": [
+    "inst_id",
+    "user",
+    "gpu_type_spec",
+    "group",
+    "workload"
+  ],
+  "pai_machine_spec": [
+    "machine",
+    "gpu_type",
+    "cap_cpu",
+    "cap_mem",
+    "cap_gpu"
+  ],
+  "pai_machine_metric": [
+    "worker_name",
+    "machine",
+    "start_time",
+    "end_time",
+    "machine_cpu_iowait",
+    "machine_cpu_kernel",
+    "machine_cpu_usr",
+    "machine_gpu",
+    "machine_load_1",
+    "machine_net_receive",
+    "machine_num_worker",
+    "machine_cpu"
+  ]
+}
