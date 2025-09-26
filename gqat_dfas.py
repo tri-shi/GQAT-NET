@@ -1,24 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 End-to-end GQAT-Net on dfas.csv (Alibaba ACT)
-- Preprocessing per paper + 3 time-series features from 'start_date'
-  -> ts_hour, ts_dayofweek, ts_month
-- Feature selection: Boruta + MI + DFS (use the UNION of all selected features; NO 24-feature cap)
-- 5-fold CV with SMOTE on train
-- Isotonic calibration + recalibration analysis (NO calibration plots saved)
-- MC-Dropout uncertainty
-- Saves metrics/plots/models to ./results and ./plots
-- Reports model size/params and computational footprint during train & inference:
-  * CPU% (avg/max), peak RAM (MB)
-  * GPU util% / peak GPU memory (MB) if nvidia-smi available (fallback to TF memory info)
-
-Fixed hyperparameters (per paper):
-  Batch Size = 128
-  Learning Rate = 1e-4
-  Epochs = 80
-  Dropout = 0.3
-  Attention Heads = 4
-  Capsule Dimensions = 128 (8 groups × 16)
 
 Requirements:
   pip install numpy pandas scikit-learn imbalanced-learn boruta psutil
@@ -678,3 +660,4 @@ def run_experiment():
 
 if __name__ == "__main__":
     run_experiment()
+
