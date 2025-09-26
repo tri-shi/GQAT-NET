@@ -22,4 +22,3 @@ conda env create -f gqat.yml
 conda activate gqat-net 
 ```
 
-**Note:** Replace `gqat-net` with the actual environment name specified inside your `gqat.yml` file if it's different.
