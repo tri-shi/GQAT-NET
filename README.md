@@ -22,3 +22,4 @@ conda env create -f gqat.yml
 conda activate gqat-net 
 ```
 
+Note: Remaining code for Google traces will be uploaded after acceptance.
