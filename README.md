@@ -21,5 +21,9 @@ cd GQAT-Net-Failure-Prediction
 conda env create -f gqat.yml
 conda activate gqat-net 
 ```
+## Citation
+Please cite the following paper if you find the code useful:
+Title: GQAT-Net: A Calibrated Attention Model for Failure Prediction in Large-Scale Distributed Systems
 
+Find my paper: DOI: https://doi.org/10.1007/s10723-025-09813-6
 
