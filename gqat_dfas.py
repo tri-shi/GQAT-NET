@@ -66,7 +66,7 @@ tf.random.set_seed(SEED)
 # -----------------------------
 # I/O config
 # -----------------------------
-DATA_PATH = r"C:/Users/shiva/Desktop/sabm_WITH_sCHEDULING/dfas.csv"
+DATA_PATH = r"C:/Users/shiva/Desktop/data.csv"
 RESULTS_DIR = "results"
 PLOTS_DIR = "plots"
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -113,7 +113,7 @@ def expected_calibration_error(y_true, y_prob, n_bins=10):
     return float(ece)
 
 # -----------------------------
-# Paper-style preprocessing + time features
+# preprocessing + time features
 # -----------------------------
 STATUS_MAP = {"Terminated": 0, "Failed": 1}
 DROP_STATUSES = {"Running", "Interrupted", "Waiting"}
@@ -125,16 +125,14 @@ def load_and_clean_df(path):
     if "Unnamed: 0" in df.columns:
         df = df.drop(columns=["Unnamed: 0"])
 
-    # ------- Add 3 time-series features from 'start_date' -------
+ 
     # ts_hour, ts_dayofweek, ts_month
     if "start_date" in df.columns:
         dt = pd.to_datetime(df["start_date"], errors="coerce", utc=False)
         df["ts_hour"] = dt.dt.hour.fillna(0).astype(int)
         df["ts_dayofweek"] = dt.dt.dayofweek.fillna(0).astype(int)   # 0=Mon,...,6=Sun
         df["ts_month"] = dt.dt.month.fillna(1).astype(int)           # 1..12
-        # keep original 'start_date' out of features (non-numeric)
-        # if you prefer to drop it entirely:
-        # df = df.drop(columns=["start_date"])
+      
     else:
         # If absent, create neutral placeholders so pipeline doesn't break
         df["ts_hour"] = 0
@@ -660,4 +658,5 @@ def run_experiment():
 
 if __name__ == "__main__":
     run_experiment()
+
 
